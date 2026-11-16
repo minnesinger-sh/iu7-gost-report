@@ -1,0 +1,81 @@
+\input{../../.claude/skills/gost-report/assets/preamble.v3.tex}
+
+% ---------- Настройки этой работы ----------
+\newcommand{\labnumber}{N}
+\newcommand{\labtitle}{Тема из задания}
+\newcommand{\labauthor}{Глущенко~Д.~И.}
+\newcommand{\labgroup}{ИУ7-53Б}
+\newcommand{\labteacher}{Строганов~Д.~В.}
+
+\hypersetup{
+    pdftitle={Лабораторная работа № \labnumber. \labtitle},
+    pdfauthor={\labauthor}
+}
+
+% Структурные элементы курса: заголовок списка источников и приложения.
+\addto\captionsrussian{%
+    \renewcommand{\refname}{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}
+\newcommand{\appendixpart}[2]{%
+    \clearpage
+    \section*{ПРИЛОЖЕНИЕ #1\\#2}%
+    \phantomsection
+    \addcontentsline{toc}{section}{ПРИЛОЖЕНИЕ #1 #2}%
+    \setcounter{lstlisting}{0}%
+    \setcounter{table}{0}%
+    \setcounter{figure}{0}%
+    \renewcommand{\thelstlisting}{#1.\arabic{lstlisting}}%
+    \renewcommand{\thetable}{#1.\arabic{table}}%
+    \renewcommand{\thefigure}{#1.\arabic{figure}}%
+}
+
+\usepackage{graphicx}
+\usepackage{fvextra}
+\fvset{
+    fontfamily=tt,
+    numbers=left,
+    numbersep=5pt,
+    xleftmargin=9mm,
+    frame=single,
+    framesep=1mm,
+    breaklines=true,
+    breakanywhere=true,
+    tabsize=4,
+    baselinestretch=1
+}
+\renewcommand{\theFancyVerbLine}{\normalfont\normalsize\rmfamily\arabic{FancyVerbLine}}
+% \codelisting{подпись}{метка}{файл} --- листинг из файла.
+\newcommand{\codelisting}[3]{%
+    \begingroup
+    \captionsetup{type=lstlisting}%
+    \caption{#1}\label{#2}%
+    \VerbatimInput{#3}%
+    \endgroup
+}
+
+% Обозначения работы, общие для текста и рисунков (если есть).
+\InputIfFileExists{00-macros}{}{}
+% Рисунки ищутся в img/ и ../img/.
+\graphicspath{{img/}{../img/}}
+% Каталоги исходного кода и тестов для листингов приложения.
+\newcommand{\srcdir}{../src/}
+\newcommand{\testdir}{../src/}
+
+% Нумерованная часть всегда начинается с новой страницы.
+\newcommand{\reportpart}[1]{\clearpage\section{#1}}
+
+\begin{document}
+
+\input{01-title}
+
+\tableofcontents
+
+\input{02-intro}
+\input{03-analytical}
+\input{04-design}
+\input{05-technological}
+\input{06-research}
+\input{07-conclusion}
+\input{08-bibliography}
+\input{09-appendix}
+
+\end{document}

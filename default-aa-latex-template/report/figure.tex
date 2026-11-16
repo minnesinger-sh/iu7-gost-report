@@ -1,0 +1,12 @@
+% Сборка одного рисунка из img/<имя>.tikz в отдельный PDF (make figures):
+% xelatex -jobname=<имя> "\def\figname{img/<имя>.tikz}\input{figure}"
+% Преамбула и стили те же, что у отчёта, поэтому рисунок совпадает с отчётным.
+\input{../../.claude/skills/gost-report/assets/preamble.v3.tex}
+\input{figstyles}
+\InputIfFileExists{00-macros}{}{}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength{\PreviewBorder}{1pt}
+\begin{document}
+\input{\figname}
+\end{document}

@@ -1,0 +1,9 @@
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/.claude/
+!/default-aa-latex-template/
+.DS_Store
+build/
+output/

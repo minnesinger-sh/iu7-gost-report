@@ -1,0 +1,60 @@
+% Титульный лист по шаблону кафедры ИУ7.
+% Данные работы задаются в main.tex: \labnumber, \labtitle, \labauthor,
+% \labgroup, \labteacher. Герб --- img/b_logo.jpg (ищется через \graphicspath).
+\begingroup
+\thispagestyle{empty}
+\singlespacing
+\setlength{\rightskip}{0pt}
+
+\noindent
+\begin{minipage}[c]{0.15\textwidth}
+    \includegraphics[width=\linewidth]{b_logo}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.83\textwidth}
+    \centering\small\bfseries
+    Министерство науки и высшего образования Российской Федерации\\
+    Федеральное государственное бюджетное образовательное учреждение\\
+    высшего образования\\
+    «Московский государственный технический университет\\
+    имени Н.~Э.~Баумана\\
+    (национальный исследовательский университет)»\\
+    (МГТУ им. Н.~Э.~Баумана)
+\end{minipage}
+
+\vspace{2mm}
+\noindent\rule{\linewidth}{3pt}
+
+\vspace{6mm}
+{\small
+\noindent ФАКУЛЬТЕТ \underline{«Информатика и системы управления»}
+
+\vspace{4mm}
+\noindent КАФЕДРА \underline{«Программное обеспечение ЭВМ и информационные технологии»}\par
+}
+
+\vfill
+\begin{center}
+    \Large\bfseries
+    Лабораторная работа № \labnumber\\[3mm]
+    по дисциплине «Анализ алгоритмов»
+\end{center}
+\vfill
+
+\noindent\textbf{Тема:} \underline{\labtitle}
+
+\vspace{6mm}
+\noindent\textbf{Студент:} \underline{\labauthor}
+
+\vspace{6mm}
+\noindent\textbf{Группа:} \underline{\labgroup}
+
+\vspace{6mm}
+\noindent\textbf{Преподаватель:} \underline{\labteacher}
+
+\vfill
+\begin{center}
+    Москва, \the\year
+\end{center}
+\endgroup
+\clearpage

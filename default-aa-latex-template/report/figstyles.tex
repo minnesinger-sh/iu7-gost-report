@@ -1,0 +1,25 @@
+% Стили схем и графиков для сборки рисунков img/*.tikz (figure.tex).
+
+% Символ «Предопределённый процесс» (ГОСТ 19.701-90, п. 3.2.2.1):
+% вызов процедуры, описанной в другой схеме или рекурсивный вызов.
+\tikzset{
+    subroutine/.style={process,path picture={
+        \draw[black]
+            ([xshift=3mm]path picture bounding box.north west) --
+            ([xshift=3mm]path picture bounding box.south west)
+            ([xshift=-3mm]path picture bounding box.north east) --
+            ([xshift=-3mm]path picture bounding box.south east);
+    }}
+}
+
+% Комментарий к блоку (ГОСТ 19.701-90): штриховая линия и скобка с текстом.
+\tikzset{
+    note/.style={align=left,anchor=west,inner xsep=2mm,font=\small},
+    connector/.style={circle,draw,minimum size=8mm,inner sep=0pt},
+}
+\newcommand{\blocknote}[3]{%
+    \node[note] (#1) at ([xshift=12mm]#2.east) {#3};
+    \draw ([xshift=2mm]#1.north west) -- (#1.north west) --
+        (#1.south west) -- ([xshift=2mm]#1.south west);
+    \draw[dashed] (#2.east) -- (#1.west);
+}
