@@ -12,8 +12,10 @@
 | `make report` | сборка отчёта в `output/pdf/report.pdf`   |
 | `make submit` | копия для сдачи (`SUBMIT=<путь>`, по умолчанию `../submit/lab-NN`): `code/`, `test/`, `report/{tex,img,data}`, `report/report.pdf`, `Makefile` |
 
-Преамбула: `.claude/skills/gost-report/assets/preamble.v3.tex`.
-Правила оформления: `.claude/skills/gost-report/references/RULES.md`.
+Работа лежит в `<курс>/lab-NN/`, папка курса — рядом с `iu7-gost-report/`.
+Преамбула: `iu7-gost-report/.claude/skills/gost-report/assets/preamble.v4.tex`
+(в `report/main.tex` и `report/figure.tex` — путь `../../../iu7-gost-report/…`).
+Правила оформления: `iu7-gost-report/.claude/skills/gost-report/references/RULES.md`.
 
 Схемы и графики — по файлу `report/img/<имя>.tikz` (только `tikzpicture`), в отчёт
 вставляются готовые PDF: `\includegraphics{<имя>}` внутри `figure`. Стили схем —

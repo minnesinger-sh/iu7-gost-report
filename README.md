@@ -33,12 +33,33 @@ default-aa-latex-template/       шаблон лабораторной по «А
   пакет `ttf-mscorefonts-installer` или файлы шрифтов в `~/.fonts`.
 - Го (Go) — для кода лабораторных.
 
+## Размещение
+
+Репозиторий клонируется в папку `iu7-gost-report/` рядом с папками курсов:
+
+```
+5-semester/
+├── iu7-gost-report/        этот репозиторий
+├── algorithm-analysis/     lab-01/, lab-02/, …
+└── …
+```
+
+Работы подключают преамбулу навыка по относительному пути — из
+`<курс>/lab-NN/report/`:
+`../../../iu7-gost-report/.claude/skills/gost-report/assets/preamble.vN.tex`.
+Поэтому имя папки `iu7-gost-report` и глубина вложенности работ
+(`<курс>/lab-NN/`) важны.
+
 ## Навык
 
-Скопировать `.claude/skills/gost-report/` в `.claude/skills/` проекта или
-в `~/.claude/skills/`, чтобы навык был доступен во всех проектах. Claude
-подключает его сам, когда задача касается отчёта по ГОСТ; начинает
-с `references/RULES.md`.
+Claude подключает навык сам, когда задача касается отчёта по ГОСТ, и начинает
+с `references/RULES.md`. Чтобы Claude Code видел навык в любом проекте,
+достаточно ссылки:
+
+```
+ln -s ~/Projects/5-semester/iu7-gost-report/.claude/skills/gost-report \
+      ~/.claude/skills/gost-report
+```
 
 Правила разложены по уровням: общие нормы → тип документа → курс →
 конкретная работа. Новые требования и замечания записываются на свой
@@ -46,7 +67,8 @@ default-aa-latex-template/       шаблон лабораторной по «А
 
 ## Шаблон лабораторной
 
-1. Скопировать `default-aa-latex-template/` в `lab-NN/` рядом с `.claude/`.
+1. Скопировать `default-aa-latex-template/` в `<курс>/lab-NN/`
+   (папка курса — рядом с `iu7-gost-report/`, см. «Размещение»).
 2. В `report/main.tex` заполнить `\labnumber`, `\labtitle`, `\labauthor`,
    `\labgroup`, `\labteacher`.
 3. Команды из `lab-NN/`:
